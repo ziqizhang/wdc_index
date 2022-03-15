@@ -34,20 +34,7 @@ public class WDCTableIndexerApp {
         LanguageDetectorModel m = new LanguageDetectorModel(is);
         LanguageDetector languageDetector = new LanguageDetectorME(m);
 
-//        LanguageDetector detector =LanguageDetector.getDefaultLanguageDetector();
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        detector.addText("This is english");
-//        LanguageResult languageResult=detector.detect();
-//
-//        System.out.println("end");
-//        System.exit(0);
+        Map<String, Integer> ignoredHosts=new HashMap<>();
 
         CoreContainer solrContainer = new CoreContainer(args[1]);
         solrContainer.load();
@@ -58,7 +45,7 @@ public class WDCTableIndexerApp {
             zipFiles.add(f.toString());
         Collections.sort(zipFiles);
         LOG.info("Initialisation completed.");
-        WDCTableIndexerWorker worker = new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,languageDetector);
+        WDCTableIndexerWorker worker = new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,languageDetector,ignoredHosts);
 
         try {
 
@@ -67,6 +54,8 @@ public class WDCTableIndexerApp {
 
             LOG.info(String.format("Completed, total entities=%s", total, new Date().toString()));
 
+            LOG.info("Optimising index...");
+            entitiesCoreClient.optimize();
         } catch (Exception ioe) {
             StringBuilder sb = new StringBuilder("Failed!");
             sb.append("\n").append(ExceptionUtils.getFullStackTrace(ioe));
@@ -75,6 +64,10 @@ public class WDCTableIndexerApp {
 
 
         entitiesCoreClient.close();
+
+        LOG.info("Total ignored hosts as follows");
+        for (Map.Entry<String, Integer> en: ignoredHosts.entrySet())
+            System.out.println("\t"+en.getKey()+"\t"+en.getValue());
         System.exit(0);
     }
 

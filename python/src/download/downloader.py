@@ -33,7 +33,7 @@ def download_schemaorgtables(in_webpage_url, outfolder,
     fp.close()
 
 def scrape_schemaorgtable_links(in_webpage_url, outfile,
-                             top100=True, mininum3=False, rest=False):
+                             top100=False, mininum3=True, rest=False):
     f = open(outfile, "a")
 
     fp = urllib.request.urlopen(in_webpage_url)

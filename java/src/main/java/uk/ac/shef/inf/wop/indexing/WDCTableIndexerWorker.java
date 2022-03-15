@@ -13,11 +13,8 @@ import org.json.JSONTokener;
 
 import java.io.*;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.RecursiveTask;
-import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
@@ -44,16 +41,23 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
 
     private int maxZipFilesPerThread = 2000;
     private List<String> zipFiles;
+    private Map<String, Integer> ignoredHosts=new HashMap<>();
+
+    private List<String> invalidDomains = Arrays.asList("ru", "rs", "gr", "pl", "md", "fr",
+            "ro", "dk", "ua", "at", "bg", "tw", "by", "hk", "it", "jp", "no", "lt", "hu",
+            "ch", "ir", "kz", "mx", "su", "br",
+            "cz", "ee", "sk", "si", "be", "de", "nl", "es",".cn");//nl - netherland, sometimes ok
 
 
     public WDCTableIndexerWorker(int id,
                                  SolrClient entitiesCoreClient, List<String> zipFiles,
-                                 LanguageDetector langdetector) {
+                                 LanguageDetector langdetector, Map<String, Integer> ignoredHosts) {
         this.workerID = id;
         this.entitiesCoreClient = entitiesCoreClient;
         //this.predicatesCoreClient = predicatesCoreClient;
         this.zipFiles = zipFiles;
         this.langDetector =langdetector;
+        this.ignoredHosts=ignoredHosts;
     }
 
     protected int runSingleThread(List<String> zipFiles) throws IOException {
@@ -64,13 +68,16 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
                 String schemaorgClass = inputZipFile.substring(
                         inputZipFile.lastIndexOf("/") + 1, inputZipFile.lastIndexOf("_")
                 );
+                String batchSource=inputZipFile.substring(
+                        inputZipFile.lastIndexOf("_") + 1, inputZipFile.lastIndexOf(".")
+                );
                 LOG.info("Thread " + workerID + " processing file " + inputZipFile + " with " + zipFile.size() + " entries");
                 Enumeration<? extends ZipEntry> entries = zipFile.entries();
                 int entryCount = 0;
 
                 //going through each gz file
-                List<String> sampleText = new ArrayList<>();
                 while (entries.hasMoreElements()) {
+                    List<String> sampleText = new ArrayList<>();
                     entryCount++;
                     ZipEntry entry = entries.nextElement();
                     LOG.info("\tThread " + workerID + " item " + entryCount + "/" + zipFile.size() + ": " + entry.getName());
@@ -83,12 +90,14 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
                     Collection<SolrInputDocument> toAdd = new ArrayList<>();
                     boolean checkLanguage = true;
                     while ((line = breader.readLine()) != null) {
-                        String docid = entry.getName() + "_thread" + workerID + "_" + recordID;
+                        String docid = entry.getName() + "_thread" + workerID + "_" + batchSource+"_"+recordID;
                         SolrInputDocument entityDoc = new SolrInputDocument();
                         entityDoc.addField("id", docid);
                         entityDoc.addField("schemaorg_class", schemaorgClass);
+                        entityDoc.addField("batch_source_t", batchSource);
                         JSONTokener tokener = new JSONTokener(line);
                         JSONObject json = new JSONObject(tokener);
+                        String host="";
                         for (String k : json.keySet()) {
                             Object o = json.get(k);
                             String field = k;
@@ -97,18 +106,23 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
                                 try {
                                     entityDoc.addField("page_url", o.toString());
                                     URI u = new URI(o.toString());
-                                    String host = u.getHost();
+                                    host = u.getHost();
                                     InternetDomainName topPrivateDomain = InternetDomainName.from(u.getHost()).topPrivateDomain();
                                     String tld = topPrivateDomain.hasPublicSuffix() ? topPrivateDomain.publicSuffix().toString() :
                                             "";
                                     entityDoc.addField("page_domain", host);
                                     entityDoc.addField("page_tld", tld);
+
+                                    if (host.contains("studycheck"))
+                                        System.out.println();
                                 } catch (Exception e) {
                                     //LOG.info(String.format("\t\tencountered issues when trying to parse (uri, or tld): %s", o));
                                 }
-                            } else if (o instanceof String) {
+                            } else if (checkLanguage && o instanceof String) {
                                 String text = o.toString().trim();
-                                if (text.split(" ").length > 10) {
+                                if (text.contains("http"))
+                                    continue;
+                                if (text.length() > 50 || text.split(" ").length > 10) {
                                     sampleText.add(text);
                                 }
                                 entityDoc.addField(field + "_t", text);
@@ -130,6 +144,9 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
                                 LOG.info(String.format("\t\t\tdata file is not English, ignored: %d, file=%s",
                                         entryCount, entry.getName()));
                                 toAdd.clear();
+                                int ignored=ignoredHosts.getOrDefault(schemaorgClass,0);
+                                ignored++;
+                                ignoredHosts.put(schemaorgClass, ignored);
                                 break;
                             }
                         }
@@ -236,7 +253,7 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
      */
     protected WDCTableIndexerWorker createInstance(List<String> splitTasks, int id) {
         WDCTableIndexerWorker indexer = new WDCTableIndexerWorker(id,
-                entitiesCoreClient, splitTasks, langDetector);
+                entitiesCoreClient, splitTasks, langDetector, ignoredHosts);
         return indexer;
     }
     /*{
@@ -249,5 +266,14 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
             total += worker.join();
         }
         return total;
+    }
+
+    private boolean isValidHost(String host) {
+        for (String d : invalidDomains) {
+            if (host.endsWith("."+d) || host.startsWith("."+d))
+                return false;
+        }
+
+        return true;
     }
 }

@@ -7,7 +7,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1ClassExtractor.java" line="57" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20feed57-af3e-4b8d-861b-103ed48338da" name="Default" comment="" />
+    <list default="true" id="20feed57-af3e-4b8d-861b-103ed48338da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python/src/download/downloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python/src/download/downloader.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -329,6 +334,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="uk.ac.shef.inf.wop.goldstandard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IndexOptimizer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.IndexOptimizer" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_index_top100 entities" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -733,6 +752,7 @@
       <item itemvalue="Application.ProdDescCorpusForBert_Fork" />
       <item itemvalue="Application.ProdDescCorpusForBert_Thread" />
       <item itemvalue="Application.WDCTableIndexerApp" />
+      <item itemvalue="Application.IndexOptimizer" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -991,18 +1011,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>198</line>
+          <line>215</line>
           <option name="timeStamp" value="971" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>353</line>
-          <option name="timeStamp" value="972" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>299</line>
-          <option name="timeStamp" value="973" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationUtil.java</url>
@@ -1116,12 +1126,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>237</line>
+          <line>254</line>
           <option name="timeStamp" value="1313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>206</line>
+          <line>223</line>
           <option name="timeStamp" value="1314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1135,16 +1145,6 @@
           <option name="timeStamp" value="1331" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="1333" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="1334" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/2.3.0/tika-core-2.3.0-sources.jar!/org/apache/tika/language/detect/LanguageDetector.java</url>
           <line>64</line>
           <option name="timeStamp" value="1335" />
@@ -1156,7 +1156,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>168</line>
+          <line>185</line>
           <option name="timeStamp" value="1368" />
         </line-breakpoint>
       </breakpoints>
