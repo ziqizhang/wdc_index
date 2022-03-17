@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../python/src/download/downloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python/src/download/downloader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -680,7 +679,7 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.WDCTableIndexerApp" />
       <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_raw $PROJECT_DIR$/../../data/wdc/wdctable_202012_index 0 40000000000000 false $PROJECT_DIR$/../resources/opennlp/langdetect-183.bin" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_raw $PROJECT_DIR$/../../data/wdc/wdctable_202012_indextemplate 0 40000000000000 false $PROJECT_DIR$/../resources/opennlp/langdetect-183.bin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
@@ -1011,7 +1010,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>215</line>
+          <line>239</line>
           <option name="timeStamp" value="971" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1126,12 +1125,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>254</line>
+          <line>278</line>
           <option name="timeStamp" value="1313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>223</line>
+          <line>247</line>
           <option name="timeStamp" value="1314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1145,19 +1144,19 @@
           <option name="timeStamp" value="1331" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/2.3.0/tika-core-2.3.0-sources.jar!/org/apache/tika/language/detect/LanguageDetector.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="1335" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-core/2.3.0/tika-core-2.3.0-sources.jar!/org/apache/tika/language/detect/LanguageDetector.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="1336" />
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="1386" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>185</line>
-          <option name="timeStamp" value="1368" />
+          <line>208</line>
+          <option name="timeStamp" value="1388" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="1389" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1171,6 +1170,11 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/wop$WDCTableIndexerApp.ic" NAME="WDCTableIndexerApp Coverage Results" MODIFIED="1647523871574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uk.ac.shef.inf.wop.indexing.*</FILTER>
+    </SUITE>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

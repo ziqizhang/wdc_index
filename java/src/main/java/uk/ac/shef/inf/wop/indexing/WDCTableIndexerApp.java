@@ -9,9 +9,7 @@ package uk.ac.shef.inf.wop.indexing;
  */
 
 import opennlp.tools.langdetect.Language;
-import opennlp.tools.langdetect.LanguageDetector;
-import opennlp.tools.langdetect.LanguageDetectorME;
-import opennlp.tools.langdetect.LanguageDetectorModel;
+
 import org.apache.commons.lang.exception.ExceptionUtils;
 
 import java.io.FileInputStream;
@@ -21,6 +19,9 @@ import java.util.logging.Logger;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
 import org.apache.solr.core.CoreContainer;
+import org.apache.tika.language.detect.LanguageDetector;
+import org.apache.tika.language.detect.LanguageResult;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -30,9 +31,9 @@ public class WDCTableIndexerApp {
     private static final Logger LOG = Logger.getLogger(WDCTableIndexerApp.class.getName());
 
     public static void main(String[] args) throws IOException {
-        InputStream is = new FileInputStream(new File(args[5]));
-        LanguageDetectorModel m = new LanguageDetectorModel(is);
-        LanguageDetector languageDetector = new LanguageDetectorME(m);
+
+//        LanguageDetectorModel m = new LanguageDetectorModel(is);
+//        LanguageDetector languageDetector = new LanguageDetectorME(m);
 
         Map<String, Integer> ignoredHosts=new HashMap<>();
 
@@ -45,7 +46,8 @@ public class WDCTableIndexerApp {
             zipFiles.add(f.toString());
         Collections.sort(zipFiles);
         LOG.info("Initialisation completed.");
-        WDCTableIndexerWorker worker = new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,languageDetector,ignoredHosts);
+        WDCTableIndexerWorker worker =
+                new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,ignoredHosts);
 
         try {
 
