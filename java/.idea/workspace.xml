@@ -8,9 +8,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20feed57-af3e-4b8d-861b-103ed48338da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/SolrSchema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker_Old.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_ConcurrentSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_ConcurrentSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Fork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Fork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Join.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Thread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescExpander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescExpander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescCatIndecesMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescCatIndecesMerger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter_Filter_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter_Filter_Lucene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter_NewSchema_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter_NewSchema_Lucene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter_Cursor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter_Cursor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter_Lucene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationFileCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1ClassExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1ClassExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/IndexOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/IndexOptimizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/ProdCatDescIndexCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/ProdCatDescIndexCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchClusterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchClusterFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchDatasetIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchDatasetIndexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/stats/ProdEntityStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/stats/ProdEntityStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +68,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -273,6 +308,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/msm4phi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -298,13 +334,13 @@
       <module />
     </configuration>
     <configuration name="GS1AnnotationFileCreator" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.goldstandard.GS1AnnotationFileCreator" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.goldstandard.GS1AnnotationFileCreator" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc prodcatdesc $USER_HOME$/data/wop/goldstandard_eng_v1_utf8.csv $USER_HOME$/data/wop/swc/trial_annotation/Nov2017_omitNorms=false" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.goldstandard.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.goldstandard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -313,12 +349,12 @@
       </method>
     </configuration>
     <configuration name="GS1AnnotationUtil" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.goldstandard.GS1AnnotationUtil" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.goldstandard.GS1AnnotationUtil" />
       <module name="java" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.goldstandard.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.goldstandard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -327,12 +363,12 @@
       </method>
     </configuration>
     <configuration name="GS1ClassExtractor" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.goldstandard.GS1ClassExtractor" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.goldstandard.GS1ClassExtractor" />
       <module name="java" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.goldstandard.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.goldstandard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -341,12 +377,12 @@
       </method>
     </configuration>
     <configuration name="IndexOptimizer" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.IndexOptimizer" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.IndexOptimizer" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_index_top100 entities" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -361,7 +397,7 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -370,13 +406,13 @@
       </method>
     </configuration>
     <configuration name="ProdCatDescIndexCreator" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.ProdCatDescIndexCreator" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.ProdCatDescIndexCreator" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/entities $USER_HOME$/data/wdc/prodcatdesc 5000 entities" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -385,13 +421,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescCatIndecesMerger" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescCatIndecesMerger" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescCatIndecesMerger" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2018/proddesc_index_filtered $USER_HOME$/data/wdc/WDCNov2018/prodcat_index $USER_HOME$/data/wdc/WDCNov2018/prodcatdesc_old" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -400,13 +436,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescCorpusForBert" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.app.ProdDescCorpusForBert" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.app.ProdDescCorpusForBert" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc 1,5,10 $USER_HOME$/data/Rakuten/original/rdc-catalog-train.tsv Name $USER_HOME$/data/Rakuten/original rakuten" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -415,13 +451,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescCorpusForBert_Fork" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.app.ProdDescCorpusForBert_Fork" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.app.ProdDescCorpusForBert_Fork" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc 1,5,10 $USER_HOME$/Cloud/GDrive/ziqizhang/project/mwpd/prodcls/data/swc2020/train.json Name $USER_HOME$/Cloud/GDrive/ziqizhang/project/mwpd/prodcls/data/swc2020 mwpd 4" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -436,7 +472,7 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -445,13 +481,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescCorpusForBert_Thread" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.app.ProdDescCorpusForBert_Thread" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.app.ProdDescCorpusForBert_Thread" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc 1,5,10,20 $USER_HOME$/Cloud/GDrive/ziqizhang/project/mwpd/prodcls/data/WDC_CatGS/wdc_gs_train.json Name $USER_HOME$/Cloud/GDrive/ziqizhang/project/mwpd/prodcls/data/WDC_CatGS wdc 4" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -460,13 +496,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescExpander" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.app.ProdDescExpander" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.app.ProdDescExpander" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/proddesc_index_filtered 20 50 $USER_HOME$/data/wop/goldstandard_eng_v1_utf8_names.txt $USER_HOME$/data/wop/goldstandard_eng_v1_utf8_descexp.txt wop" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.app.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -475,13 +511,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescExporter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescExporter" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescExporter" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/entities_1 $USER_HOME$/data/wdc/proddesc_index 500" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -490,14 +526,14 @@
       </method>
     </configuration>
     <configuration name="ProdDescExporter_Filter_Lucene" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescExporter_Filter_Lucene" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescExporter_Filter_Lucene" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/proddesc_index $USER_HOME$/data/wdc/proddesc_index_filtered 0 1000000000 10000" />
       <option name="VM_PARAMETERS" value="-Xmx8096m" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -506,14 +542,14 @@
       </method>
     </configuration>
     <configuration name="ProdDescExporter_NewSchema_Lucene" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescExporter_NewSchema_Lucene" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescExporter_NewSchema_Lucene" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/proddesc_index_old $USER_HOME$/data/wdc/proddesc_index 0 1000000000 10000" />
       <option name="VM_PARAMETERS" value="-Xmx8096m" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -522,13 +558,13 @@
       </method>
     </configuration>
     <configuration name="ProdDescTextFileExporter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescTextFileExporter" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescTextFileExporter" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc $USER_HOME$/data/wdc/WDCNov2017 $USER_HOME$/data/wdc/WDCNov2017 2 20 500" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -537,14 +573,14 @@
       </method>
     </configuration>
     <configuration name="ProdDescTextFileExporter_Lucene" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdDescTextFileExporter_Lucene" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdDescTextFileExporter_Lucene" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc $USER_HOME$/data/embeddings/wop/training_corpus $USER_HOME$/data/embeddings/wop/training_corpus 1 0 1000000000" />
       <option name="VM_PARAMETERS" value="-Xmx8096m" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -553,13 +589,13 @@
       </method>
     </configuration>
     <configuration name="ProdEntityStats" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.stats.ProdEntityStats" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.stats.ProdEntityStats" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/entities_1 100" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.stats.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.stats.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -568,13 +604,13 @@
       </method>
     </configuration>
     <configuration name="ProdNameCategoryExporter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdNameCategoryExporter" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdNameCategoryExporter" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc $USER_HOME$/data/wdc/prodcat_index 1000" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -583,12 +619,12 @@
       </method>
     </configuration>
     <configuration name="ProdNameCategoryTextFileExporter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.exporting.ProdNameCategoryTextFileExporter" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.exporting.ProdNameCategoryTextFileExporter" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/prodcatdesc $USER_HOME$/data/wop_data/mt/product/mt_corpus" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.exporting.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.exporting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -597,12 +633,26 @@
       </method>
     </configuration>
     <configuration name="SWC2020GSCreator" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.goldstandard.SWC2020GSCreator" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.goldstandard.SWC2020GSCreator" />
       <module name="java" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.goldstandard.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.goldstandard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.Test" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -611,13 +661,13 @@
       </method>
     </configuration>
     <configuration name="Util" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.Util" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.Util" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/desc_txt/desc_filtered.txt $USER_HOME$/data/wdc/desc_txt/desc_cleaned.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -626,14 +676,14 @@
       </method>
     </configuration>
     <configuration name="WDCProdMatchClusterFilter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.WDCProdMatchClusterFilter" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.WDCProdMatchClusterFilter" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/idclusters.json $USER_HOME$/data/wdc/WDCNov2018/prodcatdesc $USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/solrindex $USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/category_clusters" />
       <option name="VM_PARAMETERS" value="-Xmx8196m" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../.." />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -642,14 +692,14 @@
       </method>
     </configuration>
     <configuration name="WDCProdMatchDatasetIndexer" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.WDCProdMatchDatasetIndexer" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.WDCProdMatchDatasetIndexer" />
       <module name="java" />
       <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/solrindex $USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/idclusters.json $USER_HOME$/data/wdc/WDCNov2017/WDC_ProdMatch/offers_corpus_english_v2.json" />
       <option name="VM_PARAMETERS" value="-Xmx8196m" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../.." />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -663,7 +713,21 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WDCTableEntityExporter" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.WDCTableEntityExporter" />
+      <module name="java" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_index $PROJECT_DIR$/../../data/wdc/wdctable_202012_export false 1 0 1000000000 product &quot;c=schemaorg_class:Product,c=name_t:*,c=description_t:*,o=category_t,o=brand_t,o=page_domain&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -677,12 +741,12 @@
       <envs>
         <env name="-Djava.util.logging.SimpleFormatter.format" value="%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$-6s %2$s %5$s%6$s%n" />
       </envs>
-      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wop.indexing.WDCTableIndexerApp" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.WDCTableIndexerApp" />
       <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_raw $PROJECT_DIR$/../../data/wdc/wdctable_202012_indextemplate 0 40000000000000 false $PROJECT_DIR$/../resources/opennlp/langdetect-183.bin" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_raw/data $PROJECT_DIR$/../../data/wdc/wdctable_202012_indextemplate 0 40000000000000 false $PROJECT_DIR$/../resources/opennlp/langdetect-183.bin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uk.ac.shef.inf.wop.indexing.*" />
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -752,7 +816,14 @@
       <item itemvalue="Application.ProdDescCorpusForBert_Thread" />
       <item itemvalue="Application.WDCTableIndexerApp" />
       <item itemvalue="Application.IndexOptimizer" />
+      <item itemvalue="Application.WDCTableEntityExporter" />
+      <item itemvalue="Application.Test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -810,6 +881,17 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18309858" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -834,303 +916,298 @@
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/user/UserStatsExtractor.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/user/UserStatsExtractor.java</url>
           <line>117</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/StatsCleaner.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/StatsCleaner.java</url>
           <line>101</line>
           <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/StatsCleaner.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/StatsCleaner.java</url>
           <line>89</line>
           <option name="timeStamp" value="193" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/ClusterUserFeatureGenerator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/ClusterUserFeatureGenerator.java</url>
           <line>58</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
           <line>59</line>
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
           <line>54</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/ClusterHashtagFeatureGenerator.java</url>
           <line>146</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/UserCommunityPresence.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/UserCommunityPresence.java</url>
           <line>71</line>
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/GraphDiseaseCoocurByUser.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/GraphDiseaseCoocurByUser.java</url>
           <line>124</line>
           <option name="timeStamp" value="291" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/GraphDiseaseCoocurByTag.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/GraphDiseaseCoocurByTag.java</url>
           <line>67</line>
           <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/user/UserTotalTweetsCounter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/user/UserTotalTweetsCounter.java</url>
           <line>136</line>
           <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/user/UserTotalTweetsCounter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/user/UserTotalTweetsCounter.java</url>
           <line>139</line>
           <option name="timeStamp" value="323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/stats/user/UserRecentTweetCollector.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/stats/user/UserRecentTweetCollector.java</url>
           <line>96</line>
           <option name="timeStamp" value="401" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/deprecated/analysis/UserFeatureExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/deprecated/analysis/UserFeatureExporter.java</url>
           <line>152</line>
           <option name="timeStamp" value="408" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter.java</url>
           <line>149</line>
           <option name="timeStamp" value="684" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/stats/ProdEntityStats.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/stats/ProdEntityStats.java</url>
           <line>279</line>
           <option name="timeStamp" value="695" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/stats/ProdEntityStats.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/stats/ProdEntityStats.java</url>
           <line>214</line>
           <option name="timeStamp" value="699" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java</url>
           <line>270</line>
           <option name="timeStamp" value="727" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java</url>
           <line>106</line>
           <option name="timeStamp" value="762" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java</url>
           <line>204</line>
           <option name="timeStamp" value="765" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java</url>
           <line>209</line>
           <option name="timeStamp" value="766" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>84</line>
           <option name="timeStamp" value="784" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>74</line>
           <option name="timeStamp" value="786" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/Util.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/Util.java</url>
           <line>104</line>
           <option name="timeStamp" value="831" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>191</line>
           <option name="timeStamp" value="836" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>189</line>
           <option name="timeStamp" value="837" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>177</line>
           <option name="timeStamp" value="838" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>216</line>
           <option name="timeStamp" value="840" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>225</line>
           <option name="timeStamp" value="841" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>227</line>
           <option name="timeStamp" value="842" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>229</line>
           <option name="timeStamp" value="843" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/Util.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/Util.java</url>
           <line>222</line>
           <option name="timeStamp" value="851" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>171</line>
           <option name="timeStamp" value="876" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter_Filter_Lucene.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter_Filter_Lucene.java</url>
           <line>203</line>
           <option name="timeStamp" value="889" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/ProdCatDescIndexCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/ProdCatDescIndexCreator.java</url>
           <line>277</line>
           <option name="timeStamp" value="932" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>239</line>
-          <option name="timeStamp" value="971" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationUtil.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationUtil.java</url>
           <line>161</line>
           <option name="timeStamp" value="1051" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationUtil.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationUtil.java</url>
           <line>144</line>
           <option name="timeStamp" value="1052" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchDatasetIndexer.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchDatasetIndexer.java</url>
           <line>78</line>
           <option name="timeStamp" value="1053" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchDatasetIndexer.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchDatasetIndexer.java</url>
           <line>231</line>
           <option name="timeStamp" value="1057" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/ProdCatDescIndexCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/ProdCatDescIndexCreator.java</url>
           <line>309</line>
           <option name="timeStamp" value="1063" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/ProdCatDescIndexCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/ProdCatDescIndexCreator.java</url>
           <line>319</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationFileCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationFileCreator.java</url>
           <line>145</line>
           <option name="timeStamp" value="1106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter_Lucene.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter_Lucene.java</url>
           <line>149</line>
           <option name="timeStamp" value="1125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java</url>
           <line>139</line>
           <option name="timeStamp" value="1142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java</url>
           <line>249</line>
           <option name="timeStamp" value="1155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java</url>
           <line>199</line>
           <option name="timeStamp" value="1162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java</url>
           <line>220</line>
           <option name="timeStamp" value="1165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert.java</url>
           <line>137</line>
           <option name="timeStamp" value="1224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Join.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Join.java</url>
           <line>227</line>
           <option name="timeStamp" value="1266" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>180</line>
           <option name="timeStamp" value="1267" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>191</line>
           <option name="timeStamp" value="1269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>71</line>
           <option name="timeStamp" value="1270" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>64</line>
           <option name="timeStamp" value="1271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java</url>
           <line>98</line>
           <option name="timeStamp" value="1272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Thread.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Thread.java</url>
           <line>289</line>
           <option name="timeStamp" value="1292" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Thread.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Thread.java</url>
           <line>340</line>
           <option name="timeStamp" value="1301" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java</url>
           <line>59</line>
           <option name="timeStamp" value="1308" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>278</line>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
+          <line>307</line>
           <option name="timeStamp" value="1313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>247</line>
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
+          <line>276</line>
           <option name="timeStamp" value="1314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1144,28 +1221,47 @@
           <option name="timeStamp" value="1331" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="1386" />
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="1369" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>208</line>
-          <option name="timeStamp" value="1388" />
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="1370" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="1389" />
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
+          <line>193</line>
+          <option name="timeStamp" value="1372" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="1374" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/Test.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1378" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
+          <line>201</line>
+          <option name="timeStamp" value="1416" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="1417" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
+          <line>265</line>
+          <option name="timeStamp" value="1418" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="nextD" />
-        <watch expression="minProducts" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
