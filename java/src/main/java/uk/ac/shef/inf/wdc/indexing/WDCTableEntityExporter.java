@@ -7,20 +7,20 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
+import org.apache.solr.client.solrj.response.FacetField;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.core.CoreContainer;
 import org.apache.tika.language.detect.LanguageDetector;
 import org.apache.tika.language.detect.LanguageResult;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,8 +30,17 @@ import java.util.concurrent.Executors;
 public class WDCTableEntityExporter implements Runnable {
 
     private static final Logger LOG = Logger.getLogger(WDCTableEntityExporter.class.getName());
+    /*
+    Rules:
+     */
+    //must have description and must have at least 5 words
     private static final int MIN_DESCRIPTION_WORDS = 5;
+    //must have description and must have at least 40 chars
     private static final int MIN_DESCRIPTION_CHARS = 40;
+    //host must have at least 10 records
+    private static final int MIN_RECORDS_PER_HOST=10;
+    private Set<String> validHosts;
+
     private static long maxRecordsPerFile = 10000;
     //private long maxWordsPerFile=500;
 
@@ -47,20 +56,21 @@ public class WDCTableEntityExporter implements Runnable {
     private boolean checkLanguage;
     private LanguageDetector langDetector;
 
-    public WDCTableEntityExporter(String id, int start, int end,
+    public WDCTableEntityExporter(String id, int start, int end, Set<String> validHosts,
                                   SolrClient wdcTableIndex,
                                   int resultBatchSize, String outputFolder, boolean checkLanguage,
                                   String... queries) throws IOException {
         this.id = id;
         this.start = start;
         this.end = end;
+        this.validHosts=validHosts;
         this.wdcTableIndex = wdcTableIndex;
         this.resultBatchSize = resultBatchSize;
         this.outfolder = outputFolder;
         this.checkLanguage = checkLanguage;
         LanguageDetector detector = LanguageDetector.getDefaultLanguageDetector().loadModels();
         this.langDetector = detector;
-        LOG.info("Language detector loaded");
+        LOG.info("\tLanguage detector loaded");
         for (String q : queries) {
             //description_t:*
             if (q.startsWith("c=")) {
@@ -84,7 +94,7 @@ public class WDCTableEntityExporter implements Runnable {
         boolean stop = false;
         long total = 0;
 
-        LOG.info(String.format("\tthread %s: Started, query=%s, begin=%d end=%d...",
+        LOG.info(String.format("\tthread %s has started the query=%s, begin=%d end=%d...",
                 id, queryString, q.getStart(), end));
 
         try {
@@ -110,6 +120,9 @@ public class WDCTableEntityExporter implements Runnable {
                             id, fileCounter, total, q.getStart(), q.getStart() + q.getRows()));
 
                     for (SolrDocument d : res.getResults()) {
+                        String host = d.getFieldValue("page_domain").toString();
+                        if (!validHosts.contains(host))
+                            continue;
                         List<String> row = new ArrayList<>();
                         String description = d.getFieldValue(SolrSchema.FIELD_DESCRIPTION.fieldname()).toString();
                         StringBuilder allText = new StringBuilder();
@@ -154,11 +167,11 @@ public class WDCTableEntityExporter implements Runnable {
                 }
 
                 int curr = q.getStart() + q.getRows();
-                if (curr < end)
+                if (curr < end && curr < total)
                     q.setStart(curr);
                 else {
                     stop = true;
-                    LOG.info("\t\t thread " + id + " reached the end. Stopping...");
+                    LOG.info("\t\tthread " + id + " reached the end. Stopping...");
                 }
             }
 
@@ -239,15 +252,39 @@ public class WDCTableEntityExporter implements Runnable {
         return query;
     }
 
-    public static void main(String[] args) throws IOException {
+    private static Set<String> facetQueryForValidHosts(SolrClient client, String queryStr, int minCount,
+                                                       String facetField) throws SolrServerException, IOException {
+        SolrQuery query = new SolrQuery();
+        query.setQuery(queryStr);
+        //query.setSort("random_1234", SolrQuery.ORDER.asc);
+        query.setFacet(true);
+        query.setFacetMinCount(minCount);
+        query.setFacetLimit(-1);
+        query.addFacetField(facetField);
+        QueryResponse qr = client.query(query);
+        List<FacetField.Count> counts= qr.getFacetFields().get(0).getValues();
+        Set<String> valid=new HashSet<>();
+        for (FacetField.Count c: counts)
+            valid.add(c.getName());
+        return valid;
+    }
+
+    public static void main(String[] args) throws IOException, SolrServerException {
+        //test inputs
+        /*
+        "c=schemaorg_class:Product,c=name_t:*,c=description_t:*,o=category_t,o=brand_t,o=page_domain"
+        hotel
+        "c=schemaorg_class:Hotel,c=name_t:*,c=description_t:*,o=page_domain"
+         */
+
         /*
          * 0 - solr index
          * 1 - outfolder
          * 2 - check language or not
          * 3 - num of threads
          * 4 - start index
-         * 5 - records to process each thread
-         * 6 - queries separated by ,
+         * 5 - max records to process each thread
+         * 6 - tasks (a file containing lines and each line is a 'label\tqueries separated by ,' record
          */
         //74488335
         int jobStart = Integer.valueOf(args[4]);
@@ -257,28 +294,50 @@ public class WDCTableEntityExporter implements Runnable {
         CoreContainer prodNDContainer = new CoreContainer(args[0]);
         prodNDContainer.load();
         SolrClient solrIndex = new EmbeddedSolrServer(prodNDContainer.getCore("entities"));
-        String label=args[6];
-        String queries = args[7];
-        String[] queries_as_array = queries.split(",");
-        ExecutorService executor = Executors.newFixedThreadPool(threads);
-        for (int i = 0; i < threads; i++) {
-            int start = jobStart + i * jobs;
-            int end = start + jobs;
+        File file = new File(args[6]);
+        Scanner input = new Scanner(file);
+
+        int count=0;
+        while (input.hasNextLine()) {
+            count++;
+            String[] values= input.nextLine().split("\t");
+            if (values.length<2)
+                continue;
+            String label=values[0];
+            String queries = values[1];
+            String[] queries_as_array = queries.split(",");
+            String schemaorg_class="*:*";
+            for (String q: queries_as_array){
+                if (q.contains(SolrSchema.FIELD_CLASS.fieldname()))
+                    schemaorg_class=q.substring(2); //expected format: c=schema...
+            }
+            ExecutorService executor = Executors.newFixedThreadPool(threads);
+
+            LOG.info(String.format("Task Begins for #%d, >%s<, counting valid hosts (mincount=%d)...",
+                    count,label, MIN_RECORDS_PER_HOST));
+            Set<String> validHosts = facetQueryForValidHosts(solrIndex,schemaorg_class,MIN_RECORDS_PER_HOST, "page_domain");
+            LOG.info(String.format("\tFound %d hosts meeting the requirement...",
+                    validHosts.size()));
+
+            for (int i = 0; i < threads; i++) {
+                int start = jobStart + i * jobs;
+                int end = start + jobs;
             /*
             int id, int start, int end,
                                     SolrClient wdcTableIndex,
                                     int resultBatchSize, String outputFolder,boolean checkLanguage,
                                     String... queries
              */
-            Runnable exporter = new WDCTableEntityExporter(label+"-"+String.valueOf(i),
-                    start, end,
-                    solrIndex,
-                    10000,
-                    args[1], Boolean.parseBoolean(args[2]), queries_as_array);
-            executor.execute(exporter);
-        }
-        executor.shutdown();
-        while (!executor.isTerminated()) {
+                Runnable exporter = new WDCTableEntityExporter(label+"-"+String.valueOf(i),
+                        start, end,validHosts,
+                        solrIndex,
+                        10000,
+                        args[1], Boolean.parseBoolean(args[2]), queries_as_array);
+                executor.execute(exporter);
+            }
+            executor.shutdown();
+            while (!executor.isTerminated()) {
+            }
         }
 
         solrIndex.close();

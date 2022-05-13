@@ -35,20 +35,22 @@ public class WDCTableIndexerWorker extends RecursiveTask<Integer> {
     private SolrClient entitiesCoreClient;
     //private SolrClient predicatesCoreClient;
     private int commitBatch = 10000;
-    private int languageSample = 100;
     private int workerID;
 
     private static final Logger LOG = Logger.getLogger(WDCTableIndexerWorker.class.getName());
 
     private int maxZipFilesPerThread = 2000;
     private List<String> zipFiles;
-    private Map<String, Integer> ignoredHosts = new HashMap<>();
+    private Map<String, Integer> ignoredTLDs;
+    private Map<String, Set<String>> ignoredOtherReason;
 
     private List<String> invalidDomains = Arrays.asList("ru", "rs", "gr", "pl", "md", "fr",
             "ro", "dk", "ua", "at", "bg", "tw", "by", "hk", "it", "jp", "no", "lt", "hu",
             "ch", "ir", "kz", "mx", "su", "br",
-            "cz", "ee", "sk", "si", "be", "de", "es", ".cn",
-            "fi","eu", "co","cymru", "cy","ge","vn","ar","mk");//nl - netherland, sometimes ok
+            "cz", "ee", "sk", "si", "be", "de", "es", "cn",
+            "fi", "eu", "co", "cymru", "cy", "ge", "vn", "ar", "mk", "id", "ec", "tr",
+            "fm", "ba", "se", "kr", "il", "cl", "pe", "pk", "ps", "pt", "mt", "tv", "hr", "lu", "lv",
+            "gt", "sv", "me","ae");//nl - netherland, sometimes ok
 
     /*
     Poe&#x27;s famous icon, The Raven displayed on 15 oz. coffee mug - also see the Poe mug
@@ -59,18 +61,21 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
      */
     public WDCTableIndexerWorker(int id,
                                  SolrClient entitiesCoreClient, List<String> zipFiles,
-                                 Map<String, Integer> ignoredHosts) throws IOException {
+                                 Map<String, Integer> ignoredTLDs,
+                                 Map<String, Set<String>> ignoredOtherReason) throws IOException {
         this.workerID = id;
         this.entitiesCoreClient = entitiesCoreClient;
         //this.predicatesCoreClient = predicatesCoreClient;
         this.zipFiles = zipFiles;
         LanguageDetector detector = LanguageDetector.getDefaultLanguageDetector().loadModels();
         this.langDetector = detector;
-        this.ignoredHosts = ignoredHosts;
+        this.ignoredTLDs = ignoredTLDs;
+        this.ignoredOtherReason = ignoredOtherReason;
     }
 
     protected int runSingleThread(List<String> zipFiles) throws IOException {
         //each zip file is a schemaorg class
+        boolean checkLanguage = true;
         for (String inputZipFile : zipFiles) {
             try {
                 ZipFile zipFile = new ZipFile(inputZipFile);
@@ -86,11 +91,18 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
 
                 //going through each gz file
                 while (entries.hasMoreElements()) {
-                    List<String> sampleText = new ArrayList<>();
                     entryCount++;
-                    boolean added=false;
+                    boolean added = false;
                     ZipEntry entry = entries.nextElement();
                     LOG.info("\tThread " + workerID + " item " + entryCount + "/" + zipFile.size() + ": " + entry.getName());
+                    if (!isValidHostByFilename(entry.getName())) {
+                        LOG.info(String.format("\t\t\t>>> NOT ADDED: data file is not from a valid host, file=%s",
+                                entry.getName()));
+                        int ignored = ignoredTLDs.getOrDefault(schemaorgClass, 0);
+                        ignored++;
+                        ignoredTLDs.put(schemaorgClass, ignored);
+                        continue;
+                    }
                     InputStream fi = zipFile.getInputStream(entry);
 
                     GZIPInputStream gzip = new GZIPInputStream(fi);
@@ -98,14 +110,18 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
                     String line;
                     int recordID = 0;
                     Collection<SolrInputDocument> toAdd = new ArrayList<>();
-                    boolean checkLanguage = true;
-                    boolean invalidHost=false;
+                    boolean invalidHost = false, isEnglish = true;
+
+                    long total=0, english=0;
                     while ((line = breader.readLine()) != null) {
+                        total+=1;
+                        Set<String> textContent = new HashSet<>();
                         String docid = entry.getName() + "_thread" + workerID + "_" + batchSource + "_" + recordID;
                         SolrInputDocument entityDoc = new SolrInputDocument();
                         entityDoc.addField("id", docid);
                         entityDoc.addField("schemaorg_class", schemaorgClass);
                         entityDoc.addField("batch_source_t", batchSource);
+                        entityDoc.addField("file_source_t", entry.getName());
                         JSONTokener tokener = new JSONTokener(line);
                         JSONObject json = new JSONObject(tokener);
                         String host = "";
@@ -116,34 +132,33 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
                             String field = k;
                             if (k.equalsIgnoreCase("page_url")) {
                                 //get domain, get tld
-                                 try {
+                                try {
                                     entityDoc.addField("page_url", o.toString());
                                     URI u = new URI(o.toString());
                                     host = u.getHost();
-                                    if (host.contains("palmettogeneral.com"))
-                                        System.out.println();
                                     InternetDomainName topPrivateDomain = InternetDomainName.from(u.getHost()).topPrivateDomain();
                                     String tld = topPrivateDomain.hasPublicSuffix() ? topPrivateDomain.publicSuffix().toString() :
                                             "";
-                                    if (isInvalidHost(host)){
-                                        invalidHost=true;
+                                    if (isInvalidHost(host)) {
+                                        invalidHost = true;
                                         break;
                                     }
                                     entityDoc.addField("page_domain", host);
                                     entityDoc.addField("page_tld", tld);
+//                                    if (host.contains("thredup.com"))
+//                                        System.out.println();
+                                } catch (Exception e) {}
+                            } else if (o instanceof String) {
+                                String text = o.toString();
+                                try {
+                                    text = StringEscapeUtils.unescapeHtml4(o.toString()).replaceAll("\\s+", " ").trim();
                                 } catch (Exception e) {
-                                    //LOG.info(String.format("\t\tencountered issues when trying to parse (uri, or tld): %s", o));
+                                    text = text.replaceAll("\\s+", " ").trim();
                                 }
-                            }
-                            else if (o instanceof String) {
-                                String text = StringEscapeUtils.unescapeHtml4(o.toString())
-                                        .replaceAll("[\\p{Punct}\\d]", "").trim();
                                 if (text.contains("http"))
                                     continue;
-                                if (text.length() > 10 || text.split(" ").length >= 2) {
-                                    sampleText.add(text);
-                                }
                                 entityDoc.addField(field + "_t", text);
+                                textContent.add(text);
                             } else if (o instanceof JSONObject) {
                                 JSONObject innerJSON = (JSONObject) o;
                                 for (String innerField : innerJSON.keySet()) {
@@ -153,84 +168,78 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
                             }
                         }
 
-                        if (invalidHost){
-                            //this line is from invaild host
-                            LOG.info(String.format("\t\t\tdata file is invalid host, file=%s",
-                                    entry.getName()));
-                            invalidHost=true;
-                            break;
-                        }
-                        //check language when we collected enough samples, and are still within the
-                        //file reader of this zip file
-                        if (checkLanguage && sampleText.size() >= languageSample) {
-                            //detect language
-                            checkLanguage = false;
-                            boolean isEnglish = isEnglish(sampleText);
-                            sampleText.clear();
-                            if (!isEnglish) {
-                                LOG.info(String.format("\t\t\tdata file is not English, ignored: %d, file=%s",
-                                        entryCount, entry.getName()));
-                                toAdd.clear();
-                                break;
-                            }
+                        if (invalidHost) {
+                            invalidHost=false;
+                            continue;
                         }
 
-                        //will not execute if language checking to be non english
+                        //check language
+                        if (checkLanguage) {
+                            isEnglish = isEnglish(textContent);
+                            if (!isEnglish)
+                                continue;
+                            else
+                                english++;
+                        }
+
+                        //will not execute if language checking to be non english or record from invalid host
                         toAdd.add(entityDoc);
                         if (toAdd.size() >= commitBatch) {
-                            if (checkLanguage){//language has not been checked, wait
-                                continue;
-                            }
                             try {
                                 entitiesCoreClient.add(toAdd);
                                 LOG.info(String.format("\t\tadded batch size: %d, total=%d",
                                         commitBatch, recordID));
                                 toAdd.clear();
-                                added=true;
+                                added = true;
                             } catch (Exception e) {
                                 LOG.info(String.format("\t\tencountered exception when adding batch, current record id=%d, " +
                                                 "previous batch size=%d\n%s",
                                         recordID, commitBatch, ExceptionUtils.getFullStackTrace(e)));
                             }
                         }
-
                         recordID++;
-                    } //end while (a file)
+                    } //end while (one json)
                     breader.close();
-                    //check language if we never had enough samples, but collected some texts anyway
-                    if (!invalidHost && checkLanguage ) {
-                        boolean isEnglish = isEnglish(sampleText);
-                        sampleText.clear();
-                        if (!isEnglish) {
-                            LOG.info(String.format("\t\t\tdata file is not English, ignored: %d, file=%s",
-                                    entryCount, entry.getName()));
-                            toAdd.clear();
-                        }else if (toAdd.size() > 0) {
-                            try {
-                                added = true;
-                                entitiesCoreClient.add(toAdd);
-                                LOG.info(String.format("\t\tadded batch size: %d, total=%d",
-                                        commitBatch, recordID));
-                                toAdd.clear();
 
-                            } catch (Exception e) {
-                                LOG.info(String.format("\t\tencountered exception when adding batch, current record id=%d, " +
-                                                "previous batch size=%d\n%s",
-                                        recordID, commitBatch, ExceptionUtils.getFullStackTrace(e)));
+                    if (toAdd.size() > 0) {
+                        try {
+                            added = true;
+                            entitiesCoreClient.add(toAdd);
+                            LOG.info(String.format("\t\tadded batch size: %d, total=%d",
+                                    commitBatch, recordID));
+                            toAdd.clear();
+                        } catch (Exception e) {
+                            LOG.info(String.format("\t\tencountered exception when adding batch, current record id=%d, " +
+                                            "previous batch size=%d\n%s",
+                                    recordID, commitBatch, ExceptionUtils.getFullStackTrace(e)));
+                        }
+                    }
+
+                    if (total>0) {
+                        double english_per = (double) english / total;
+                        if (english_per<0.1 && english < 100){
+                            try {
+                                added=false;
+                                LOG.info(String.format("\t\t\t>>> ROLL BACK, too few English data: %f, or %d records",
+                                        english_per, english));
+                                entitiesCoreClient.deleteByQuery("file_source_t:\""+entry.getName()+"\"");
+                                entitiesCoreClient.commit();
+                            }catch (Exception e){
+                                e.printStackTrace();
                             }
                         }
                     }
 
                     //BufferedReader br = new BufferedReader(new InputStreamReader(fi));
-                    if (!added){
-                        LOG.info(String.format("\t\t\t>>> NOT ADDED: file=%s",
+                    if (!added) {
+                        LOG.info(String.format("\t\t\t>>> NOT ADDED, possibly due to language or domain invalid: file=%s",
                                 entry.getName()));
                         toAdd.clear();
-                        int ignored = ignoredHosts.getOrDefault(schemaorgClass, 0);
-                        ignored++;
-                        ignoredHosts.put(schemaorgClass, ignored);
+                        Set<String> notadded= ignoredOtherReason.getOrDefault(schemaorgClass, new HashSet<>());
+                        notadded.add(entry.getName());
+                        ignoredOtherReason.put(schemaorgClass, notadded);
                     }
-                }
+                }//end while for each zip file
                 zipFile.close();
             } catch (ZipException e) {
                 LOG.info(String.format("\tThread " + workerID + " unable to process zip file: " + inputZipFile + "\n%s"
@@ -240,20 +249,52 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
         return 0;
     }
 
-    private boolean isInvalidHost(String host){
-        for (String tld : invalidDomains){
-            if (host.startsWith(tld+".")|| host.endsWith("."+tld))
+    private boolean isInvalidHost(String host) {
+        for (String tld : invalidDomains) {
+            if (host.startsWith(tld + ".") || host.endsWith("." + tld))
                 return true;
         }
         return false;
     }
-    private boolean isEnglish(List<String> texts) {
-        int eng=0, ignored=0;
-        for (int i = 0; i < texts.size(); i++) {
+
+    private boolean isValidHostByFilename(String filename) {
+        String[] parts = filename.split("_");
+        if (parts.length < 3)
+            return true;
+        String host = parts[1];
+        return isValidHost(host);
+    }
+
+    private boolean isEnglish(Set<String> texts) {
+        StringBuilder sb = new StringBuilder();
+        for (String t: texts)
+            sb.append(t).append(" ");
+        String merged=sb.toString().replaceAll("[\\p{Punct}\\d]", " ").replaceAll("\\s+", " ").trim();
+        if (merged.length()<50 && merged.split("\\s+").length<3)
+            return false;
+        String alphanumeric =merged.replaceAll("[^a-zA-Z]","");
+        if (alphanumeric.length()<(merged.length()*0.5))
+            return false;
+
+        String langdetectinput=sb.toString().trim();
+        if (langdetectinput.length()>1000)
+            langdetectinput=langdetectinput.substring(0,1000);
+        langDetector.reset();
+        langDetector.addText(langdetectinput);
+        LanguageResult languageResult = langDetector.detect();
+        String lang = languageResult.getLanguage();
+        if (lang.equalsIgnoreCase("en") && languageResult.getRawScore()>0.9)
+            return true;
+        return false;
+    }
+
+    private boolean isEnglish_old2(Set<String> texts) {
+        int eng = 0, ignored = 0;
+        for (String t : texts) {
             langDetector.reset();
-            langDetector.addText(texts.get(i));
+            langDetector.addText(t);
             LanguageResult languageResult = langDetector.detect();
-            String lang= languageResult.getLanguage();
+            String lang = languageResult.getLanguage();
             if (lang.equalsIgnoreCase("")) {
                 ignored += 1;
                 continue;
@@ -262,13 +303,10 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
             if (lang.equalsIgnoreCase("en"))
                 eng++;
         }
-        double eng_ratio=(double)eng/(texts.size()-ignored);
-        if (eng==0)
+        double eng_ratio = (double) eng / (texts.size() - ignored);
+        if (eng == 0)
             return false;
-        if (texts.size()>50)
-            return eng_ratio>0.8;
-        else
-            return eng_ratio>0.5;
+        return eng_ratio > 0.5;
     }
 
     private boolean isEnglish_Old(List<String> texts) {
@@ -282,7 +320,7 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
         LanguageResult languageResult = langDetector.detect();
         //check result
         //return bestLanguage.getLang().equalsIgnoreCase("eng");
-        String lang= languageResult.getLanguage();
+        String lang = languageResult.getLanguage();
         float conf = languageResult.getRawScore();
 
 //        if (lang.equalsIgnoreCase("en") && conf<0.9)
@@ -353,7 +391,7 @@ Pour tous les événements importants de votre vie, pensez à la carte personnal
      */
     protected WDCTableIndexerWorker createInstance(List<String> splitTasks, int id) throws IOException {
         WDCTableIndexerWorker indexer = new WDCTableIndexerWorker(id,
-                entitiesCoreClient, splitTasks, ignoredHosts);
+                entitiesCoreClient, splitTasks, ignoredTLDs, ignoredOtherReason);
         return indexer;
     }
     /*{

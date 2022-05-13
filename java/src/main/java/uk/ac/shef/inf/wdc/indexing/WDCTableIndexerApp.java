@@ -10,6 +10,8 @@ package uk.ac.shef.inf.wdc.indexing;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.logging.Logger;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
@@ -28,7 +30,8 @@ public class WDCTableIndexerApp {
 //        LanguageDetectorModel m = new LanguageDetectorModel(is);
 //        LanguageDetector languageDetector = new LanguageDetectorME(m);
 
-        Map<String, Integer> ignoredHosts=new HashMap<>();
+        Map<String, Integer> ignoredTLDs=new HashMap<>();
+        Map<String, Set<String>> ignoredNoneEnglish=new HashMap<>();
 
         CoreContainer solrContainer = new CoreContainer(args[1]);
         solrContainer.load();
@@ -40,7 +43,7 @@ public class WDCTableIndexerApp {
         Collections.sort(zipFiles);
         LOG.info("Initialisation completed.");
         WDCTableIndexerWorker worker =
-                new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,ignoredHosts);
+                new WDCTableIndexerWorker(0,entitiesCoreClient,zipFiles,ignoredTLDs,ignoredNoneEnglish);
 
         try {
 
@@ -60,9 +63,21 @@ public class WDCTableIndexerApp {
 
         entitiesCoreClient.close();
 
-        LOG.info("Total ignored hosts as follows");
-        for (Map.Entry<String, Integer> en: ignoredHosts.entrySet())
+        LOG.info("Total ignored TLDs as follows");
+        for (Map.Entry<String, Integer> en: ignoredTLDs.entrySet())
             System.out.println("\t"+en.getKey()+"\t"+en.getValue());
+        LOG.info("Total ignored NON English as follows");
+        for (Map.Entry<String, Set<String>> en: ignoredNoneEnglish.entrySet())
+            System.out.println("\t"+en.getKey()+"\t"+en.getValue().size());
+        LOG.info("Saving ignored NON English to a file...");
+        PrintWriter w  = new PrintWriter(new FileWriter(args[1]+"/ignored_non_english.txt"));
+        for (Map.Entry<String, Set<String>> en: ignoredNoneEnglish.entrySet()) {
+            w.println(en.getKey());
+            for (String h: en.getValue()){
+                w.println(("\t\t"+h));
+            }
+        }
+        w.close();
         System.exit(0);
     }
 

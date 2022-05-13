@@ -8,43 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20feed57-af3e-4b8d-861b-103ed48338da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/SolrSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker_Old.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/TestQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_ConcurrentSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_ConcurrentSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Fork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Fork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Join.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescCorpusForBert_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescCorpusForBert_Thread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/app/ProdDescExpander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/app/ProdDescExpander.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescCatIndecesMerger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescCatIndecesMerger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter_Filter_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter_Filter_Lucene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescExporter_NewSchema_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescExporter_NewSchema_Lucene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter_Cursor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter_Cursor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdDescTextFileExporter_Lucene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdDescTextFileExporter_Lucene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/exporting/ProdNameCategoryTextFileExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/exporting/ProdNameCategoryTextFileExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationFileCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1AnnotationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1AnnotationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/GS1ClassExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/GS1ClassExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/goldstandard/SWC2020GSCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/goldstandard/SWC2020GSCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/IndexOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/IndexOptimizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/ProdCatDescIndexCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/ProdCatDescIndexCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchClusterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchClusterFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCProdMatchDatasetIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCProdMatchDatasetIndexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wop/stats/ProdEntityStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/stats/ProdEntityStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker_Old.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker_Old.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -660,6 +629,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestQuery" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.TestQuery" />
+      <module name="java" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Util" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.Util" />
       <module name="java" />
@@ -724,7 +707,7 @@
     <configuration name="WDCTableEntityExporter" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.ac.shef.inf.wdc.indexing.WDCTableEntityExporter" />
       <module name="java" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_index $PROJECT_DIR$/../../data/wdc/wdctable_202012_export false 1 0 1000000000 product &quot;c=schemaorg_class:Product,c=name_t:*,c=description_t:*,o=category_t,o=brand_t,o=page_domain&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../data/wdc/wdctable_202012_index $PROJECT_DIR$/../../data/wdc/wdctable_202012_export false 1 0 1000000000 $PROJECT_DIR$/../../data/wdc/wdc_entity_export" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="uk.ac.shef.inf.wdc.indexing.*" />
@@ -818,9 +801,11 @@
       <item itemvalue="Application.IndexOptimizer" />
       <item itemvalue="Application.WDCTableEntityExporter" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.TestQuery" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestQuery" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -1206,11 +1191,6 @@
           <option name="timeStamp" value="1313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
-          <line>276</line>
-          <option name="timeStamp" value="1314" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/tika/tika-langdetect/1.16/tika-langdetect-1.16-sources.jar!/org/apache/tika/langdetect/OptimaizeLangDetector.java</url>
           <line>165</line>
           <option name="timeStamp" value="1329" />
@@ -1222,23 +1202,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="1369" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
-          <line>138</line>
+          <line>151</line>
           <option name="timeStamp" value="1370" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
-          <line>193</line>
+          <line>206</line>
           <option name="timeStamp" value="1372" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="1374" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/Test.java</url>
@@ -1246,19 +1216,19 @@
           <option name="timeStamp" value="1378" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
-          <line>201</line>
-          <option name="timeStamp" value="1416" />
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/TestQuery.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1419" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableEntityExporter.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="1429" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
-          <line>168</line>
-          <option name="timeStamp" value="1417" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/ac/shef/inf/wdc/indexing/WDCTableIndexerWorker.java</url>
-          <line>265</line>
-          <option name="timeStamp" value="1418" />
+          <line>219</line>
+          <option name="timeStamp" value="1469" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
